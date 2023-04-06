@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 
 const get = (req,res)=>{
     let mode = req.query["hub.mode"];
@@ -8,7 +8,7 @@ const get = (req,res)=>{
   // Check if a token and mode is in the query string of the request
   if (mode && token) {
     // Check the mode and token sent is correct
-    if (mode === "subscribe" && token === "salut") {
+    if (mode === "subscribe" && token === process.env.TOKEN) {
       // Respond with the challenge token from the request
       console.log("WEBHOOK_VERIFIED");
       res.status(200).send(challenge);
