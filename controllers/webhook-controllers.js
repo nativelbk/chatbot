@@ -30,8 +30,12 @@ const post = async (req,res)=>{
 
     if (body.object === "page") {
         // Returns a '200 OK' response to all requests
-       const data = await axios.post(`https://graph.facebook.com/16.0/${body.entry[0].messaging[0].recipient.id}/messages?recipient={'id':'${body.entry[0].messaging[0].sender.id}'}&messaging_type=RESPONSE&message={'text':'hello,world'}&access_token=${process.env.TOKEN}`)
-       console.log(data)
+       try {
+        const data = await axios.post(`https://graph.facebook.com/16.0/${body.entry[0].messaging[0].recipient.id}/messages?recipient={'id':'${body.entry[0].messaging[0].sender.id}'}&messaging_type=RESPONSE&message={'text':'hello,world'}&access_token=${process.env.TOKEN}`)
+        console.log(data)
+       } catch (error) {
+        console.log(error)
+       }
        res.status(200).send("EVENT_RECEIVED");
     
         // Determine which webhooks were triggered and get sender PSIDs and locale, message content and more.
