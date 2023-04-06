@@ -9,6 +9,7 @@ app.use(express.json())
 
 
 app.get('/',(req,res)=>{
+    console.log('SAlut')
     res.send('salut')
 })
 
