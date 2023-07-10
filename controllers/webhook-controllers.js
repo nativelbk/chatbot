@@ -33,7 +33,7 @@ const post = async (req,res)=>{
        } catch (error) {
         console.log(error)
        }*/
-         try {
+        try {
              const a = body.entry[0].messaging[0].recipient.id
              const b = body.entry[0].messaging[0].sender.id
             const corps = {
@@ -44,12 +44,11 @@ const post = async (req,res)=>{
             message:{
               text:"Rapid izy zagny"
             }
-            console.log(a,b)
           
-          }
-        const data = await axios.post(`https://graph.facebook.com/17.0/${a}/messages?access_token=${process.env.TOKEN}`,corps)
-        
-       } catch (error) {
+            }
+            console.log(a,b)
+            const data = await axios.post(`https://graph.facebook.com/17.0/${a}/messages?access_token=${process.env.TOKEN}`,corps)
+        } catch (error) {
         console.log(error)
        }
          
