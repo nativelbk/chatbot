@@ -24,11 +24,7 @@ const get = (req,res)=>{
 const post = async (req,res)=>{
     
     
-    let body = req.body;
-    console.log("body")
-    console.log(`\u{1F7EA} Received webhook:`);
-    console.dir(body, { depth: null });
-
+    let body = req.body
     if (body.object === "page") {
         // Returns a '200 OK' response to all requests
        /*try {
@@ -37,7 +33,9 @@ const post = async (req,res)=>{
        } catch (error) {
         console.log(error)
        }*/
-        console.log("EVENT_RECEIVED")
+          const a = body.entry[0].messaging[0].recipient.id
+          const b = body.entry[0].messaging[0].sender.id
+        console.log(a,b)
        res.status(200).send("EVENT_RECEIVED");
     
         // Determine which webhooks were triggered and get sender PSIDs and locale, message content and more.
