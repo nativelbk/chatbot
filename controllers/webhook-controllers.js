@@ -43,6 +43,7 @@ const post = async (req,res)=>{
     
       } else {
         // Return a '404 Not Found' if event is not from a page subscription
+        console.log('not found')
         res.sendStatus(404);
       }
 }
