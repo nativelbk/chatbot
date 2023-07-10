@@ -36,7 +36,7 @@ const post = async (req,res)=>{
           try {
              const a = body.entry[0].messaging[0].recipient.id
              const b = body.entry[0].messaging[0].sender.id
-            const body = {
+            const corps = {
             "recipient":{
             "id":`${b}`
             },
@@ -46,7 +46,7 @@ const post = async (req,res)=>{
             }
           
           }
-        const data = await axios.post(`https://graph.facebook.com/17.0/${a}/messages?access_token=${process.env.TOKEN}`,body)
+        const data = await axios.post(`https://graph.facebook.com/17.0/${a}/messages?access_token=${process.env.TOKEN}`,corps)
         console.log(data)
        } catch (error) {
         console.log(error)
