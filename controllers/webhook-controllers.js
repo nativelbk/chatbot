@@ -46,7 +46,7 @@ const post = async (req,res)=>{
             }
           
             }
-            console.log(a,b)
+            console.log(body)
             const data = await axios.post(`https://graph.facebook.com/v17.0/${a}/messages?access_token=${process.env.TOKEN}`,corps)
         } catch (error) {
         console.log(error)
