@@ -42,11 +42,10 @@ const post = async (req,res)=>{
             },
             messaging_type: "RESPONSE",
             message:{
-              text:"Rapid izy zagny"
+              text:`${body.entry[0].mes}saging[0].message.text}(1)` 
             }
           
             }
-            console.log(body.entry[0].messaging)
             const data = await axios.post(`https://graph.facebook.com/v17.0/${a}/messages?access_token=${process.env.TOKEN}`,corps)
         } catch (error) {
         console.log(error)
