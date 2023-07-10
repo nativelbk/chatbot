@@ -42,7 +42,7 @@ const post = async (req,res)=>{
             },
             messaging_type: "RESPONSE",
             message:{
-              text:`${body.entry[0].mes}saging[0].message.text}(1)` 
+              text:`${body.entry[0].messaging[0].message.text}(1)` 
             }
           
             }
