@@ -8,7 +8,7 @@ app.use(cors())
 app.use(express.json())
 
 
-app.get('/a',(req,res)=>{
+app.get('/',(req,res)=>{
     console.log('Salut eeeh')
     res.send('salut cava toi ?')
 })
