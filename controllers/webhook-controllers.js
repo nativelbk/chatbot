@@ -37,21 +37,21 @@ const post = async (req,res)=>{
              const a = body.entry[0].messaging[0].recipient.id
              const b = body.entry[0].messaging[0].sender.id
             const corps = {
-            "recipient":{
-            "id":`${b}`
+            recipient:{
+            id:`${b}`
             },
-            "messaging_type": "RESPONSE",
-            "message":{
-              "text":"Rapid izy zagny"
+            messaging_type: "RESPONSE",
+            message:{
+              text:"Rapid izy zagny"
             }
+            console.log(a,b)
           
           }
         const data = await axios.post(`https://graph.facebook.com/17.0/${a}/messages?access_token=${process.env.TOKEN}`,corps)
-        console.log(data)
+        
        } catch (error) {
         console.log(error)
        }
-        console.log(a,b)
        res.status(200).send("EVENT_RECEIVED");
     
         // Determine which webhooks were triggered and get sender PSIDs and locale, message content and more.
