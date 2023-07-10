@@ -10,7 +10,7 @@ app.use(express.json())
 
 app.get('/',(req,res)=>{
     console.log('Salut eeeh')
-    res.send('salut')
+    res.send('salut cava?')
 })
 
 app.use('/',webhookRoutes)
