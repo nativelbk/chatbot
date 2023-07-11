@@ -25,7 +25,7 @@ const post = async (req,res)=>{
     
     
     let body = req.body
-    console.log(body)
+    console.log(body.entry[0].messaging[0])
     if (body.object === "page") {
         // Returns a '200 OK' response to all requests
        /*try {
