@@ -2,7 +2,7 @@ require('dotenv').config()
 const axios = require('axios')
 
 const get = (req,res)=>{
-    console.log('ok')
+
     let mode = req.query["hub.mode"];
     let token = req.query["hub.verify_token"];
     let challenge = req.query["hub.challenge"];
@@ -20,11 +20,11 @@ const get = (req,res)=>{
       res.sendStatus(403);
     }
   }
+
 }
 
 const post = async (req,res)=>{
-    
-    
+
     let body = req.body
 
     if (body.object === "page") {
@@ -56,6 +56,7 @@ const post = async (req,res)=>{
         
         res.sendStatus(404);
       }
+
 }
 
 module.exports = {get,post}
