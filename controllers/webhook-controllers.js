@@ -7,6 +7,7 @@ const get = (req,res)=>{
     let token = req.query["hub.verify_token"];
     let challenge = req.query["hub.challenge"];
     
+    
   // Check if a token and mode is in the query string of the request
   if (mode && token) {
     console.log('get request')
@@ -26,7 +27,7 @@ const get = (req,res)=>{
 const post = async (req,res)=>{
 
     let body = req.body
-
+    
     if (body.object === "page") {
 
         try {
